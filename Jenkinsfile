@@ -15,7 +15,7 @@ pipeline {
             }
             stage('Deploy'){
                 steps{
-                    sh 'cp -r $WORKSPACE/build /var/workspace'
+                    sh 'cp -r $WORKSPACE/build /usr/local/tomcat/webapps'
                     sh 'curl -u admin:admin http://52.66.203.57:8888/manager/reload?path=/build'
                 }
             }
